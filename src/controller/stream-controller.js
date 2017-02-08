@@ -1128,7 +1128,7 @@ class StreamController extends EventHandler {
 
       // has remuxer dropped video frames located before first keyframe ?
       [data.data1, data.data2].forEach(buffer => {
-        if (buffer) {
+        if (buffer && buffer.length) {
           this.appended = true;
           // arm pending Buffering flag before appending a segment
           this.pendingBuffering = true;
